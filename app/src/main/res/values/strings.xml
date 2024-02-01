@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OnlineStoreApp</string>
+    <string name="sign_in">Вход</string>
+    <string name="placeholder_name">Имя</string>
+    <string name="placeholder_last_name">Фамилия</string>
+    <string name="placeholder_phone_number">Номер телефона</string>
+    <string name="sign_in_button">Войти</string>
+    <string name="description">Нажимая кнопку “Войти”, Вы принимаете\n условия программы лояльности</string>
+</resources>

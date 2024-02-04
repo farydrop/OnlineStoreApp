@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.CatalogFragment">
+
+    <TextView
+        android:id="@+id/tvCatalogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/catalog"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    
+    <ImageView
+        android:id="@+id/ivSortBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sort_by"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCatalogTitle"/>
+
+    <TextView
+        android:id="@+id/tvSortBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="По популярности"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintStart_toEndOf="@+id/ivSortBy"
+        app:layout_constraintTop_toTopOf="@+id/ivSortBy"
+        app:layout_constraintBottom_toBottomOf="@id/ivSortBy"/>
+
+    <ImageView
+        android:id="@+id/ivDropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down_arrow"
+        android:padding="8dp"
+        app:layout_constraintStart_toEndOf="@+id/tvSortBy"
+        app:layout_constraintTop_toTopOf="@+id/ivSortBy"
+        app:layout_constraintBottom_toBottomOf="@id/ivSortBy"/>
+
+    <TextView
+        android:id="@+id/tvFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filter"
+        android:textColor="@color/dark_grey"
+        android:textSize="14sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivSortBy"
+        app:layout_constraintBottom_toBottomOf="@id/ivSortBy"/>
+
+    <ImageView
+        android:id="@+id/ivFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_filter"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvFilter"
+        app:layout_constraintTop_toTopOf="@id/tvFilter"
+        app:layout_constraintBottom_toBottomOf="@id/tvFilter"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivSortBy"
+        tools:listitem="@layout/tag_item"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCatalog"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="11dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvTag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/catalog_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

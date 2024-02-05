@@ -15,6 +15,8 @@ interface SignInUseCase {
         inputLastName: String?,
         inputPhoneNumber: String?
     ): Observable<SignInActionState>
+
+    fun signIn(person:PersonEntity)
 }
 
 sealed class SignInActionState{

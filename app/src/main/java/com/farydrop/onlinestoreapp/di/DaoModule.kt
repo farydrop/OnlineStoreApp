@@ -2,8 +2,8 @@ package com.farydrop.onlinestoreapp.di
 
 import android.app.Application
 import androidx.room.Room
-import com.farydrop.data.database.PersonDao
-import com.farydrop.data.database.PersonDataBase
+import com.farydrop.data.dao.PersonDao
+import com.farydrop.data.dao.PersonDataBase
 import org.koin.dsl.module
 
 val daoModule = module {

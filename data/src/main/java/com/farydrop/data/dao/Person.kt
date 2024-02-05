@@ -1,4 +1,4 @@
-package com.farydrop.data.database
+package com.farydrop.data.dao
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

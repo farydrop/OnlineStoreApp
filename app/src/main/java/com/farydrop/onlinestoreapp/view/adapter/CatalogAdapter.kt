@@ -5,15 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.farydrop.onlinestoreapp.data.entity.Catalog
 import com.farydrop.onlinestoreapp.data.entity.Item
 import com.farydrop.onlinestoreapp.databinding.CatalogItemBinding
 
-class CatalogAdapter : ListAdapter<Item, CatalogAdapter.CatalogViewHolder>(CatalogDiffCallback()) {
+class CatalogAdapter : ListAdapter<Catalog, CatalogAdapter.CatalogViewHolder>(CatalogDiffCallback()) {
 
     private var onClickListener: CatalogActionListener? = null
 
     interface CatalogActionListener {
-        fun onCatalogFavorites(position: Int, catalog: Item)
+        fun onCatalogFavorites(position: Int, catalog: Catalog)
     }
 
     class CatalogViewHolder(private val binding: CatalogItemBinding) :
@@ -39,11 +40,13 @@ class CatalogAdapter : ListAdapter<Item, CatalogAdapter.CatalogViewHolder>(Catal
     override fun onBindViewHolder(holder: CatalogViewHolder, position: Int) {
         val item = getItem(position)
 
+        //todo add unit
+        holder.img.setImageResource(item.imgOne)
         holder.title.text = item.title
         holder.subtitle.text = item.subtitle
         holder.priceWithoutDiscount.text = item.price.price
         holder.priceWithDiscount.text = item.price.priceWithDiscount
-        holder.discount.text = item.price.discount.toString()
+        holder.discount.text = "-${item.price.discount.toString()}%"
         holder.rating.text = item.feedback.rating.toString()
         holder.feedback.text = item.feedback.count.toString()
 

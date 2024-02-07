@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.GridLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import com.farydrop.onlinestoreapp.R
+import com.farydrop.onlinestoreapp.data.entity.Catalog
 import com.farydrop.onlinestoreapp.data.entity.Item
 import com.farydrop.onlinestoreapp.databinding.FragmentCatalogBinding
 import com.farydrop.onlinestoreapp.view.adapter.CatalogAdapter
@@ -36,18 +37,13 @@ class CatalogFragment : Fragment() {
             catalogAdapter?.submitList(list as MutableList<Item>?)
         }*/
 
-        viewModel.catalog.observe(viewLifecycleOwner) { response ->
-            if (response.isSuccessful) {
-                val list = response.body()
-                catalogAdapter?.submitList(list?.items)
-            } else {
-                // Обработка ошибок
-            }
+        viewModel.catalog.observe(viewLifecycleOwner) { list ->
+            catalogAdapter?.submitList(list)
         }
 
         catalogAdapter?.setOnClickListener(object : CatalogAdapter.CatalogActionListener{
-            override fun onCatalogFavorites(position: Int, catalog: Item) {
-                TODO("Not yet implemented")
+            override fun onCatalogFavorites(position: Int, catalog: Catalog) {
+                catalog.isFavorites = true
             }
 
         })

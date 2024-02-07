@@ -1,3 +1,4 @@
+/*
 package com.farydrop.onlinestoreapp.di
 
 import com.farydrop.domain.interactors.SignInInteractor
@@ -6,4 +7,4 @@ import org.koin.dsl.module
 
 val useCasesModule = module {
     factory<SignInUseCase> { SignInInteractor(get()) }
-}
+}*/

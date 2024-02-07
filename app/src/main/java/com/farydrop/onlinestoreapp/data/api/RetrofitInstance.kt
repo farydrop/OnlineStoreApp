@@ -1,5 +1,9 @@
-package com.farydrop.data.api
+package com.farydrop.onlinestoreapp.data.api
 
+import com.farydrop.onlinestoreapp.data.entity.Item
+import com.farydrop.onlinestoreapp.data.entity.ItemEntity
+import com.google.gson.GsonBuilder
+import com.google.gson.InstanceCreator
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,6 +18,7 @@ object RetrofitInstance {
         .readTimeout(100, TimeUnit.SECONDS)
         .build()
 
+
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -22,7 +27,7 @@ object RetrofitInstance {
             .build()
     }
 
-    val apiService: ApiService by lazy {
+    val api: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
 }

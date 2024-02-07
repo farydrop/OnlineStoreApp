@@ -1,3 +1,4 @@
+/*
 package com.farydrop.onlinestoreapp.di
 
 import android.app.Application
@@ -17,4 +18,4 @@ private fun createDataBase(app: Application): PersonDataBase =
         .build()
 
 private fun createPersonDao(database: PersonDataBase): PersonDao =
-    database.personDao()
+    database.personDao()*/

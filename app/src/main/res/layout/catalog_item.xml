@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
+            android:id="@+id/ivHeartNotPressed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_heart"
@@ -31,6 +32,7 @@
             android:layout_margin="6dp"/>
 
         <ImageView
+            android:id="@+id/ivHeartPressed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_heart_pressed"
@@ -99,6 +101,7 @@
             app:layout_constraintTop_toBottomOf="@id/llPrice">
 
             <TextView
+                android:id="@+id/tvPriceWithDiscount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="489"
@@ -114,6 +117,7 @@
                 android:layout_marginStart="2dp" />
 
             <TextView
+                android:id="@+id/tvDiscount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-35%"
@@ -164,6 +168,7 @@
                 android:src="@drawable/ic_star"/>
 
             <TextView
+                android:id="@+id/tvRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4.5"
@@ -173,6 +178,7 @@
                 android:layout_marginStart="3dp"/>
 
             <TextView
+                android:id="@+id/tvFeedback"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="(51)"

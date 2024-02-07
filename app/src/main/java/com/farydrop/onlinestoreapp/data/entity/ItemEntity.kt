@@ -1,4 +1,4 @@
-package com.farydrop.data.api.entity
+package com.farydrop.onlinestoreapp.data.entity
 
 data class ItemEntity(
     val items: List<Item>

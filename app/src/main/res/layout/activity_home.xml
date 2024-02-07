@@ -15,10 +15,11 @@
         app:layout_constraintBottom_toTopOf="@id/tabLayout"/>
 
     <com.google.android.material.tabs.TabLayout
+        app:tabTextAppearance="@style/MineCustomTabText"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        app:tabGravity="fill"
+        android:textAllCaps="false"
         app:tabIndicatorHeight="0dp"
         app:tabTextColor="@color/dark_grey"
         app:tabSelectedTextColor="@color/pink"

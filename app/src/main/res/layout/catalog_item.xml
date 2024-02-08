@@ -6,7 +6,8 @@
     app:strokeWidth="1dp"
     app:strokeColor="@color/light_grey"
     android:backgroundTint="@color/white"
-    android:layout_margin="7dp">
+    android:layout_margin="7dp"
+    android:id="@+id/cardView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

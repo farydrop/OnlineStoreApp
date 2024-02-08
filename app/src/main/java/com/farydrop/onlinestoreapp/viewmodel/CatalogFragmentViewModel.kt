@@ -6,15 +6,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.farydrop.onlinestoreapp.R
 import com.farydrop.onlinestoreapp.data.entity.Catalog
+import com.farydrop.onlinestoreapp.data.entity.Details
 import com.farydrop.onlinestoreapp.data.entity.Item
 import com.farydrop.onlinestoreapp.data.entity.ItemEntity
+import com.farydrop.onlinestoreapp.data.repository.CatalogDataBaseRepository
 import com.farydrop.onlinestoreapp.data.repository.GetStoreListRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.awaitResponse
 
-class CatalogFragmentViewModel : ViewModel() {
+class CatalogFragmentViewModel(private val catalogDao: CatalogDataBaseRepository) : ViewModel() {
 
     var repo = GetStoreListRepository()
     val catalog: MutableLiveData<List<Catalog>> = MutableLiveData()
@@ -25,18 +29,23 @@ class CatalogFragmentViewModel : ViewModel() {
         catalog()
     }
 
-    fun getCatalog() {
+    fun insertFavorites(catalog: Catalog) {
         viewModelScope.launch {
-            //catalogList()?.let { allItems.addAll(it) }
-            //catalog.value = repo.getStoreItem()
+            withContext(Dispatchers.IO){
+                catalogDao.insertCatalog(catalog)
+            }
         }
     }
 
-    /*private suspend fun catalogList(url: String = "https://run.mocky.io/v3/97e721a7-0a66-4cae-b445-83cc0bcf9010"): List<Item>? {
-        val catalogResponse = repo.getStoreItem(url).awaitResponse()
-        val characterData = catalogResponse.body()
-        return characterData
-    }*/
+    fun insertDetails(details: Details) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO){
+                catalogDao.insertDetails(details)
+            }
+        }
+    }
+
+
 
     fun catalog() {
         viewModelScope.launch {
@@ -71,7 +80,9 @@ class CatalogFragmentViewModel : ViewModel() {
                             isFavorites = false,
                             price = item.price,
                             subtitle = item.subtitle,
-                            title = item.title
+                            title = item.title,
+                            tags = item.tags,
+                            info = item.info
                         )
                         catalogItems.add(catalogItem)
                         catalog.value = catalogItems

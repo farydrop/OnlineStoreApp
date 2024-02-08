@@ -11,4 +11,11 @@
     <string name="catalog">Каталог</string>
     <string name="filter">Фильтры</string>
     <string name="tag">Смотреть все</string>
+
+    <string-array name="sort_options">
+        <item>По популярности</item>
+        <item>По уменьшению цены</item>
+        <item>По возрастанию цены</item>
+    </string-array>
+
 </resources>

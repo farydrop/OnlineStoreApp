@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "catalog_table")
-data class Catalog(
+@Entity(tableName = "details_table")
+data class Details(
     @ColumnInfo(name = "imgOne")val imgOne: Int,
     @ColumnInfo(name = "imgTwo")val imgTwo: Int,
     @ColumnInfo(name = "isFavorites")var isFavorites: Boolean,

@@ -15,11 +15,13 @@ class CatalogAdapter : ListAdapter<Catalog, CatalogAdapter.CatalogViewHolder>(Ca
 
     interface CatalogActionListener {
         fun onCatalogFavorites(position: Int, catalog: Catalog)
+        fun onCatalogDetails(position: Int, catalog: Catalog)
     }
 
     class CatalogViewHolder(private val binding: CatalogItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        val card = binding.cardView
         val img = binding.ivImage
         val heartNotPressed = binding.ivHeartNotPressed
         val heartPressed = binding.ivHeartPressed
@@ -53,9 +55,22 @@ class CatalogAdapter : ListAdapter<Catalog, CatalogAdapter.CatalogViewHolder>(Ca
         holder.heartNotPressed.setOnClickListener {
             if (onClickListener != null) {
                 onClickListener!!.onCatalogFavorites(position, item)
-                holder.heartPressed.visibility = View.VISIBLE
             }
         }
+
+        holder.card.setOnClickListener {
+            if (onClickListener != null) {
+                onClickListener!!.onCatalogDetails(position, item)
+            }
+        }
+
+        if (item.isFavorites){
+            holder.heartPressed.visibility = View.VISIBLE
+        } else {
+            holder.heartPressed.visibility = View.GONE
+        }
+
+
 
 
     }

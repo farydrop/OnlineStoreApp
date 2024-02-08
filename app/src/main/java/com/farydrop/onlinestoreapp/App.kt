@@ -1,6 +1,8 @@
 package com.farydrop.onlinestoreapp
 
 import android.app.Application
+import com.farydrop.onlinestoreapp.di.daoModule
+import com.farydrop.onlinestoreapp.di.repositoryModule
 import com.farydrop.onlinestoreapp.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,7 +19,7 @@ class App : Application() {
             // Reference Android context
             androidContext(this@App)
             // Load modules
-            modules(viewModelModule, )
+            modules(viewModelModule, daoModule, repositoryModule)
         }
     }
 }

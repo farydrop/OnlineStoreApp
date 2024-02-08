@@ -29,26 +29,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCatalogTitle"/>
 
-    <TextView
-        android:id="@+id/tvSortBy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="По популярности"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:textColor="@color/dark_grey"
-        app:layout_constraintStart_toEndOf="@+id/ivSortBy"
-        app:layout_constraintTop_toTopOf="@+id/ivSortBy"
-        app:layout_constraintBottom_toBottomOf="@id/ivSortBy"/>
-
-    <ImageView
-        android:id="@+id/ivDropDown"
+    <Spinner
+        android:id="@+id/spDropDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_down_arrow"
         android:padding="8dp"
-        app:layout_constraintStart_toEndOf="@+id/tvSortBy"
+        app:layout_constraintStart_toEndOf="@+id/ivSortBy"
         app:layout_constraintTop_toTopOf="@+id/ivSortBy"
         app:layout_constraintBottom_toBottomOf="@id/ivSortBy"/>
 
@@ -74,18 +61,95 @@
         app:layout_constraintTop_toTopOf="@id/tvFilter"
         app:layout_constraintBottom_toBottomOf="@id/tvFilter"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTag"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/tagContainer"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        android:layout_marginTop="13dp"
-        android:layout_marginStart="13dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:strokeWidth="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivSortBy"
-        tools:listitem="@layout/tag_item"/>
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/light_grey">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Смотреть все"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:textColor="@color/grey"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFace"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Лицо"
+                android:textSize="14sp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:textColor="@color/grey"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBody"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Тело"
+                android:textSize="14sp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:textColor="@color/grey"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSuntan"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Загар"
+                android:textSize="14sp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:textColor="@color/grey"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMask"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Маски"
+                android:textSize="14sp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:textColor="@color/grey"
+                android:checkable="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:chipBackgroundColor="@color/bg_chip_state_list"/>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCatalog"
@@ -95,7 +159,7 @@
         android:layout_marginStart="11dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvTag"
+        app:layout_constraintTop_toBottomOf="@+id/tagContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/catalog_item"/>

@@ -3,6 +3,7 @@
 <img width="200" alt="Screenshot_catalog" src="https://github.com/farydrop/OnlineStoreApp/assets/53113225/386c6c3d-5a52-46ad-825e-dd344881a864">
 <img width="200" alt="Screenshot_account" src="https://github.com/farydrop/OnlineStoreApp/assets/53113225/29feae62-7a87-4a76-86a2-daea29acae89">
 <img width="200" alt="Screenshot_is_favorites" src="https://github.com/farydrop/OnlineStoreApp/assets/53113225/c93a0098-a83e-4bb7-97b6-be82b1a54ef4">
+<img width="200" alt="Screenshot_details" src="https://github.com/farydrop/OnlineStoreApp/assets/53113225/794edae9-a4ef-4a49-bb46-095720423190">
 
 ## Основные функции
 

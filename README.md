@@ -1,4 +1,5 @@
 # Онлайн-магазин
+<img width="300" alt="Screenshot_sign_in" src="https://github.com/farydrop/OnlineStoreApp/assets/53113225/4c25eda8-b972-4c2c-b7fe-bd53055d23db">
 ![Screenshot_sign_in](https://github.com/farydrop/OnlineStoreApp/assets/53113225/4c25eda8-b972-4c2c-b7fe-bd53055d23db)
 
 ## Основные функции

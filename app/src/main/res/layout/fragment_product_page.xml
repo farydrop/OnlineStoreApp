@@ -1,582 +1,593 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.ProductPageFragment">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/ivBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="26dp"/>
-
-    <ImageView
-        android:id="@+id/ivShare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ivBack"
-        app:layout_constraintBottom_toBottomOf="@id/ivBack"
-        android:layout_marginEnd="26dp"/>
-
-    <ImageView
-        android:id="@+id/ivProductImg"
-        android:layout_width="0dp"
-        android:layout_height="368dp"
-        android:src="@drawable/one"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="21dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivBack"/>
-
-    <ImageView
-        android:id="@+id/ivHeart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_heart"
-        app:layout_constraintEnd_toEndOf="@id/ivProductImg"
-        app:layout_constraintTop_toTopOf="@id/ivProductImg" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_question"
-        app:layout_constraintStart_toStartOf="@id/ivProductImg"
-        app:layout_constraintBottom_toBottomOf="@id/ivProductImg"/>
-
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivProductImg">
-
-        <View
-            android:layout_width="4dp"
-            android:layout_height="4dp"
-            android:layout_margin="2dp"
-            android:background="@color/pink"/>
-
-        <View
-            android:layout_width="4dp"
-            android:layout_height="4dp"
-            android:layout_margin="2dp"
-            android:background="#DEDEDE"/>
-
-        <View
-            android:layout_width="4dp"
-            android:layout_height="4dp"
-            android:layout_margin="2dp"
-            android:background="#DEDEDE"/>
-
-        <View
-            android:layout_width="4dp"
-            android:layout_height="4dp"
-            android:layout_margin="2dp"
-            android:background="#DEDEDE"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvProductTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A`PIEU"
-        android:textColor="@color/grey"
-        android:textSize="16sp"
-        android:fontFamily="@font/sfprodisplay_medium"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll"/>
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Пенка для умывания`A`PIEU` `DEEP CLEAN` 200 мл"
-        android:textColor="@color/black"
-        android:fontFamily="@font/sfprodisplay_medium"
-        android:textSize="20sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvProductTitle"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <LinearLayout
-        android:id="@+id/llAvailable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDescription">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Доступно для заказа"
-            android:textColor="@color/grey"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/tvAvailable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="30"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:layout_marginStart="3dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="штук"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:layout_marginStart="3dp"/>
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/vStrip"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="#F8F8F8"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llAvailable"/>
-
-    <LinearLayout
-        android:id="@+id/llRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vStrip"
-        android:orientation="horizontal"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4.3"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:layout_gravity="center"
-            android:layout_marginStart="6dp"/>
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="2dp"
-            android:layout_gravity="center"
-            android:background="@color/grey"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="6dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4 отзыва"
-            android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llRating"
-        android:orientation="horizontal"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="16dp">
-
-        <TextView
-            android:id="@+id/tvPriceWithDiscount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="549 ₽"
-            android:fontFamily="@font/sfprodisplay_medium"
-            android:textSize="24sp"
-            android:textColor="@color/black"
-            android:layout_marginEnd="11dp"/>
-
-        <TextView
-            android:id="@+id/tvPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="549 ₽"
-            android:textSize="12sp"
-            android:textColor="@color/grey"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/tvDiscount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-35%"
-            android:textSize="9sp"
-            android:textColor="@color/white"
-            android:background="@drawable/discount_background"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginStart="11dp"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvDescriptionTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Описание"
-        android:textSize="16sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/sfprodisplay_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llPrice"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clBrand"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDescriptionTitle"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/placeholder_background">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.ProductPageFragment">
 
-        <TextView
-            android:id="@+id/tvBrandTitle"
+        <ImageView
+            android:id="@+id/ivBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A`PIEU"
-            android:textSize="14sp"
-            android:layout_margin="12dp"
-            android:fontFamily="@font/sfprodisplay_medium"
-            android:textColor="@color/black"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_arrow_left"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <ImageView
+            android:id="@+id/ivProductImg"
+            android:layout_width="0dp"
+            android:layout_height="368dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="21dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+        <ImageView
+            android:id="@+id/ivHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintEnd_toEndOf="@id/ivProductImg"
+            app:layout_constraintTop_toTopOf="@id/ivProductImg" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_right_arrow"
-            android:layout_margin="14dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:src="@drawable/ic_question"
+            app:layout_constraintBottom_toBottomOf="@id/ivProductImg"
+            app:layout_constraintStart_toStartOf="@id/ivProductImg" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/tvFullDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Пенка для лица Глубокое очищение содержит минеральную воду и соду, способствует глубокому очищению пор от различных загрязнений, контролирует работу сальных желез, сужает поры. Обладает мягким антисептическим действием, не пересушивая кожу. Минеральная вода тонизирует и смягчает кожу."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clBrand"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:textSize="12sp"
-        android:textColor="@color/dark_grey"/>
-
-    <TextView
-        android:id="@+id/tvHide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFullDescription"
-        android:text="Скрыть"
-        android:fontFamily="@font/sfprodisplay_medium"
-        android:textSize="12sp"
-        android:textColor="@color/grey"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:id="@+id/tvCharacteristicsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Характеристики"
-        android:textSize="16sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="34dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/sfprodisplay_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHide"/>
-
-    <TextView
-        android:id="@+id/tvProductCodeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Артикул товара"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCharacteristicsTitle"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="34dp"
-        android:textColor="@color/dark_grey"/>
-
-    <TextView
-        android:id="@+id/tvProductCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="133987"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvProductCodeTitle"
-        app:layout_constraintBottom_toBottomOf="@id/tvProductCodeTitle"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/dark_grey"/>
-
-    <View
-        android:id="@+id/vStripOne"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="#DEDEDE"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvProductCodeTitle"/>
-
-    <TextView
-        android:id="@+id/tvAreaOfUseTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Область использования "
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vStripOne"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/dark_grey"/>
-
-    <TextView
-        android:id="@+id/tvAreaOfUse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Лицо"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvAreaOfUseTitle"
-        app:layout_constraintBottom_toBottomOf="@id/tvAreaOfUseTitle"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/dark_grey"/>
-
-    <View
-        android:id="@+id/vStripTwo"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="#DEDEDE"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAreaOfUseTitle"/>
-
-    <TextView
-        android:id="@+id/tvCountryOfOriginTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Страна производства "
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vStripTwo"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/dark_grey"/>
-
-    <TextView
-        android:id="@+id/tvCountryOfOrigin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Республика Корея"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvCountryOfOriginTitle"
-        app:layout_constraintBottom_toBottomOf="@id/tvCountryOfOriginTitle"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/dark_grey"/>
-
-    <View
-        android:id="@+id/vStripThree"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="#DEDEDE"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCountryOfOriginTitle"/>
-
-    <TextView
-        android:id="@+id/tvCompoundTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Состав"
-        android:textSize="16sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="34dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/sfprodisplay_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vStripThree"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_copy"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvCompoundTitle"
-        app:layout_constraintBottom_toBottomOf="@id/tvCompoundTitle"/>
-
-    <TextView
-        android:id="@+id/tvCompound"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Water, Propylene Glycol, Dipropylene Glycol, Lauric acid, Myristic Acid, Potassium Hydroxide, Lauryl Hydroxysultaine, Potassium Cocoate, Potassium Cocoyl Glycinate, Sodium Chloride, Glycerin, Phenoxyethanol, Chlorphenesin, Fragrance, Caprylyl Glycol, Ethylhexylglycerin, Capric acid, Palmitic Acid, Disodium EDTA, Sodium Bicarbonate, Cocamidopropyl Betaine, Butylene Glycol."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCompoundTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:maxLines="2"
-        android:textSize="12sp"/>
-
-    <TextView
-        android:id="@+id/tvMoreDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="Подробнее"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCompound"
-        android:fontFamily="@font/sfprodisplay_medium"
-        android:textColor="@color/grey"
-        android:textSize="12sp"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clAddButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMoreDetails"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/placeholder_background"
-        android:backgroundTint="@color/pink">
-
-        <TextView
-            android:id="@+id/tvPriceOnButton"
+        <LinearLayout
+            android:id="@+id/ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="549₽"
-            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProductImg">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_margin="2dp"
+                android:background="@color/pink" />
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_margin="2dp"
+                android:background="#DEDEDE" />
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_margin="2dp"
+                android:background="#DEDEDE" />
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_margin="2dp"
+                android:background="#DEDEDE" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvProductTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/sfprodisplay_medium"
-            android:textColor="@color/white"
+            android:text="A`PIEU"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/ll" />
 
         <TextView
-            android:id="@+id/tvPriceWithoutDiscount"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="549 ₽"
-            android:textSize="10sp"
-            android:textColor="@color/light_pink"
-            android:layout_marginStart="9dp"
-            app:layout_constraintStart_toEndOf="@id/tvPriceOnButton"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Добавить в корзину"
-            android:textSize="14sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/sfprodisplay_medium"
-            android:textColor="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Пенка для умывания`A`PIEU` `DEEP CLEAN` 200 мл"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProductTitle" />
+
+        <LinearLayout
+            android:id="@+id/llAvailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Доступно для заказа"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvAvailable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="30"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="штук"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vStrip"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="#F8F8F8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llAvailable" />
+
+        <LinearLayout
+            android:id="@+id/llRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vStrip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:text="4.3"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/tvFeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="4 отзыва"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llRating">
+
+            <TextView
+                android:id="@+id/tvPriceWithDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="11dp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="549 ₽"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="549 ₽"
+                android:textColor="@color/grey"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tvDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="11dp"
+                android:background="@drawable/discount_background"
+                android:gravity="center"
+                android:text="-35%"
+                android:textColor="@color/white"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDescriptionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sfprodisplay_medium"
+            android:text="Описание"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llPrice" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clBrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/placeholder_background"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescriptionTitle">
+
+            <TextView
+                android:id="@+id/tvBrandTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="A`PIEU"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="14dp"
+                android:src="@drawable/ic_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvFullDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Пенка для лица Глубокое очищение содержит минеральную воду и соду, способствует глубокому очищению пор от различных загрязнений, контролирует работу сальных желез, сужает поры. Обладает мягким антисептическим действием, не пересушивая кожу. Минеральная вода тонизирует и смягчает кожу."
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clBrand" />
+
+        <TextView
+            android:id="@+id/tvHide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sfprodisplay_medium"
+            android:text="Скрыть"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFullDescription" />
+
+        <TextView
+            android:id="@+id/tvCharacteristicsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/sfprodisplay_medium"
+            android:text="Характеристики"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHide" />
+
+        <TextView
+            android:id="@+id/tvProductCodeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="34dp"
+            android:text="Артикул товара"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCharacteristicsTitle" />
+
+        <TextView
+            android:id="@+id/tvProductCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="133987"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvProductCodeTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvProductCodeTitle" />
+
+        <View
+            android:id="@+id/vStripOne"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="#DEDEDE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProductCodeTitle" />
+
+        <TextView
+            android:id="@+id/tvAreaOfUseTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Область использования "
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vStripOne" />
+
+        <TextView
+            android:id="@+id/tvAreaOfUse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Лицо"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvAreaOfUseTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvAreaOfUseTitle" />
+
+        <View
+            android:id="@+id/vStripTwo"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="#DEDEDE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAreaOfUseTitle" />
+
+        <TextView
+            android:id="@+id/tvCountryOfOriginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Страна производства "
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vStripTwo" />
+
+        <TextView
+            android:id="@+id/tvCountryOfOrigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Республика Корея"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvCountryOfOriginTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCountryOfOriginTitle" />
+
+        <View
+            android:id="@+id/vStripThree"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="#DEDEDE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCountryOfOriginTitle" />
+
+        <TextView
+            android:id="@+id/tvCompoundTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/sfprodisplay_medium"
+            android:text="Состав"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vStripThree" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_copy"
+            app:layout_constraintBottom_toBottomOf="@id/tvCompoundTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCompoundTitle" />
+
+        <TextView
+            android:id="@+id/tvCompound"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:maxLines="2"
+            android:text="Water, Propylene Glycol, Dipropylene Glycol, Lauric acid, Myristic Acid, Potassium Hydroxide, Lauryl Hydroxysultaine, Potassium Cocoate, Potassium Cocoyl Glycinate, Sodium Chloride, Glycerin, Phenoxyethanol, Chlorphenesin, Fragrance, Caprylyl Glycol, Ethylhexylglycerin, Capric acid, Palmitic Acid, Disodium EDTA, Sodium Bicarbonate, Cocamidopropyl Betaine, Butylene Glycol."
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCompoundTitle" />
+
+        <TextView
+            android:id="@+id/tvMoreDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sfprodisplay_medium"
+            android:text="Подробнее"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCompound" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAddButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/placeholder_background"
+            android:backgroundTint="@color/pink"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMoreDetails"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tvPriceOnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="17dp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="549₽"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPriceWithoutDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:text="549 ₽"
+                android:textColor="@color/light_pink"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvPriceOnButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="Добавить в корзину"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

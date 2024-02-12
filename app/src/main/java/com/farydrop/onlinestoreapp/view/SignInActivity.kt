@@ -12,18 +12,24 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.text.method.DigitsKeyListener
 import com.farydrop.onlinestoreapp.R
+import com.farydrop.onlinestoreapp.data.entity.Person
 import com.farydrop.onlinestoreapp.databinding.ActivitySignInBinding
+import com.farydrop.onlinestoreapp.viewmodel.ProductPageFragmentViewModel
+import com.farydrop.onlinestoreapp.viewmodel.SignInViewModel
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
+    val viewModel: SignInViewModel by viewModel()
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         val clearIcon = getDrawable(R.drawable.ic_big_close)
         clearIcon?.setBounds(0, 0, clearIcon.intrinsicWidth, clearIcon.intrinsicHeight)
@@ -129,6 +135,17 @@ class SignInActivity : AppCompatActivity() {
         binding.tietPhoneNumber.addTextChangedListener(PhoneNumberFormattingTextWatcher())
 
         binding.btPostOffer.setOnClickListener{
+            val firstName = binding.tietFirstName.text.toString()
+            val lastName = binding.tietLastName.text.toString()
+            val phoneNumber = binding.tietPhoneNumber.text.toString()
+            if (firstName.isNotEmpty() && lastName.isNotEmpty() && phoneNumber.isNotEmpty()) {
+                // Вызываем метод viewModel для сохранения данных
+                val person = Person(0,firstName,lastName,phoneNumber)
+                viewModel.insertPerson(person)
+            } else {
+                // Обрабатываем случай, когда какое-то из полей пустое
+                // Можно показать пользователю сообщение об ошибке или выполнить другие действия
+            }
             startActivity(Intent(this@SignInActivity,HomeActivity::class.java))
             finish()
         }

@@ -1,5 +1,6 @@
 package com.farydrop.onlinestoreapp.view.adapter
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -70,6 +71,7 @@ class CatalogAdapter : ListAdapter<Catalog, CatalogAdapter.CatalogViewHolder>(Ca
             holder.heartPressed.visibility = View.GONE
         }
 
+        holder.priceWithoutDiscount.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
 
 
 

@@ -1,5 +1,6 @@
 package com.farydrop.onlinestoreapp.view
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.fragment.app.Fragment
@@ -32,8 +33,28 @@ class ProductPageFragment : Fragment() {
             }
             binding.tvBrandTitle.text = details.title
             binding.tvProductTitle.text = details.title
+            binding.ivProductImg.setImageResource(details.imgOne)
+            binding.tvDescription.text = details.subtitle
+            binding.tvPriceWithDiscount.text = details.price.priceWithDiscount
+            binding.tvPriceWithoutDiscount.text = details.price.price
+            binding.tvDiscount.text = "-${details.price.discount.toString()}%"
+            binding.tvFullDescription.text = details.description
+            binding.tvProductCode.text = details.info[0].value
+            binding.tvAreaOfUse.text = details.info[1].value
+            binding.tvCountryOfOrigin.text = details.info[2].value
+            binding.tvAvailable.text = details.available.toString()
+            binding.tvRating.text = details.feedback.rating.toString()
+            binding.tvFeedback.text = "${details.feedback.count.toString()} отзывов"
+
+
         }
 
+        binding.tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

@@ -8,7 +8,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-   viewModel { SignInViewModel() }
+   viewModel { SignInViewModel(get()) }
    viewModel { CatalogFragmentViewModel(get()) }
    viewModel { FavoritesFragmentViewModel(get()) }
    viewModel { ProductPageFragmentViewModel(get()) }

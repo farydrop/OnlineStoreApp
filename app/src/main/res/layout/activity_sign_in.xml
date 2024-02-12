@@ -86,18 +86,21 @@
             app:layout_constraintTop_toBottomOf="@+id/tietLastName"
             />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btPostOffer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tietPhoneNumber"
+            android:background="@drawable/placeholder_background"
             android:backgroundTint="@color/light_pink"
             android:text="@string/sign_in_button"
+            style="@style/MineCustomTabText"
+            android:textColor="@color/white"
             android:layout_marginTop="32dp"
-            android:textSize="18sp"
-            android:fontFamily="@font/sfprodisplay_regular"
+            android:textSize="14sp"
+            android:fontFamily="@font/sfprodisplay_medium"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
